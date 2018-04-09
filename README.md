@@ -1,4 +1,4 @@
-# TDT4120-AlgDat
+# TDT4120-AlgDat - Kompendium
 
 # Overordnede læringsmål
 **Kunnskap om:**
@@ -114,7 +114,7 @@ Worst case: O(n2)
 Figur/Kode:
 
  
-2 Datastrukturer
+### 2 Datastrukturer
 For å unngå grunnleggende kjøretidsfeller er det viktig å kunne organisere og strukturere data fornuftig. Her skal vi se på hvordan enkle strukturer kan implementeres i praksis, og hva vi vinner på å bruke dem i algoritmene våre.
  
 [B1] Forstå hvordan stakker og køer fungerer
@@ -223,7 +223,7 @@ Amortisert kjøretid O(1)
  
 
 
-3 Splitt og hersk
+### 3 Splitt og hersk
 Rekursiv dekomponering er kanskje den viktigste ideen i hele faget, og designmetoden splitt og hersk er en grunnleggende utgave av det: Del instansen i mindre biter, løs problemet rekursivt for disse, og kombinér løsningene
  
 [C1] Forstå designmetoden divide-and-conquer (splitt og hersk) (!)
@@ -333,7 +333,7 @@ S(m) = 2
 T(n) = 2 lg n
 
  
-4 Rangering i lineær tid
+### 4 Rangering i lineær tid
 Vi kan ofte få bedre løsninger ved å styrke kravene til input eller ved å svekke kravene til output. Sortering basert på sammenligninger (x<=y) er et klassisk eksempel: I verste fall må vi bruke lg n! sammenligninger, men om vi antar mer om elementene eller bare sorterer noen av dem så kan vi gjøre det bedre.
  
 [D1] Forstå hvorfor sammenlikningsbasert sortering har en worst-case på Ω(n lg n) (!)
@@ -443,7 +443,7 @@ Bruker en modifisert Partition, kalt Partition-Around, der man sender inn pivot 
 (4) Partisjonér input rundt median av medianer x ved å bruke den modifiserte versjonen av Partition. 
 (5) Dersom i==k, returner x, hvis ikke fortsett rekursivt
  
-5 Rotfaste trestrukturer
+### 5 Rotfaste trestrukturer
 Rotfaste trær gjenspeiler rekursiv dekomponering. I binære søketrær er alt i venstre deltre mindre enn rota, mens alt i høyre deltre er større, og det gjelder rekursivt for alle deltrær! Hauger er enklere: Alt er mindre enn rota. Det begrenser funksjonaliteten, men gjør dem billigere å bygge og balansere.
  
 [E1] Forstå hvordan heaps fungerer, og hvordan de kan brukes som prioritetskøer (!)
@@ -586,7 +586,7 @@ Vit det
 [E6] Vite at det finnes søketrær med garantert høyde på Θ(lg n)
 Vit det
  
-6 Dynamisk programmering
+### 6 Dynamisk programmering
 På sett og vis en generalisering av splitt og hersk, der delproblemer kan overlappe: I stedet for et tre av delprogram-avhengigheter har vi en rettet asyklisk graf. Vi finner og lagrer del-løsninger i en rekkefølge som stemmer med avhengighetene.
  
  
@@ -722,7 +722,7 @@ Output: Indekser i1,...,ik slik at wi1+...+wik <= W og totalverdien vi1+...+vik 
 Sjuk tabell her og
 
  
-7 Grådige algoritmer
+### 7 Grådige algoritmer
 Grådige algoritmer består av en serie med valg, og hvert valg tas lokalt: Algoritmen gjør alltid det som ser best ut her og nå, uten noe større perspektiv. Slike algoritmer er ofte enkle; utfordringen ligger i å finne ut om de gir rett svar
  
 [G1] Forstå designmetoden grådighet (!)
@@ -812,7 +812,7 @@ Output: Binær koding som minimerer forventet kodelengde ∑cϵC (c.freq *length
 Starter med et sett av |C| blader og utfører en sekvens med |C|-1 sammenslåings operasjoner. Returnerer roten til treet. 
 Kjøretid: O(n lgn)
  
-8 Traversering av grafer
+### 8 Traversering av grafer
 Vi traverserer en graf ved å besøke noder vi vet om. Vi vet i utgangspunktet bare om startnoden, men oppdager naboene til dem vi besøker. Traversering er viktig i seg selv, men danner også ryggraden til flere mer avanserte algoritmer
 [H1] Forstå hvordan grafer kan implementeres
 Graf G = (V, E), der V er noder (vertices) og E er kanter (edges)
@@ -923,7 +923,7 @@ Det at vi bruker en FIFO-kø er det som lar BFS finne de korteste stiene til all
 Hvordan vi velger å traversere, handler om hvordan vi ønsker å prioritere noder. 
 Andre prioriteringer vil gi andre traverseringsalgoritmer, som for eksempel den såkalte A ∗ -algoritmen (ikke pensum).
  
-9 Minimale spenntrær
+### 9 Minimale spenntrær
 Her har vi en graf med vekter på kantene, og ønsker å bare beholde akkurat de kantene vi må for å koble sammen alle nodene, med en så lav vektsum som mulig. Erke-eksempel på grådighet: Velg én og én kant, alltid den billigste lovlige.
  
 [I1] Forstå skog-implementasjonen av disjunkte mengder (CONNECTED-COMPONENTS, SAME-COMPONENT, MAKE-SET, UNION, LINK, FIND-SET)
@@ -1037,7 +1037,7 @@ Ved binær heap O(E lg V)
 Ved Fibonacci heap O(V lg V + E)
 
 
-10 Korteste vei fra én til alle
+### 10 Korteste vei fra én til alle
 Bredde-først-søk kan finne stier med færrest mulige kanter, man hva om kantene har ulik lengde? Det generelle problemet er uløst, men vi kan løse problemet med gradvis bedre kjøretid for grafer (i) uten negative sykler; (ii) uten negative kanter; og (iii) uten sykler. Og vi bruker samme prinsipp for alle tre!
  
 [J1] Forstå ulike varianter av korteste-vei- eller korteste-sti-problemet (Single-source, single-destination, single-pair, all-pairs)
@@ -1201,7 +1201,7 @@ Ved array O(V2)
 
 
  
-11 Korteste vei fra alle til alle
+### 11 Korteste vei fra alle til alle
 Vi kan finne de korteste veiene fra hver node etter tur, men mange av delproblemene vil overlappe - om vi har mange nok kanter lønner det seg å bruke dynamisk programmering med dekomponeringen “Skal vi innom k eller ikke?”
  
 [K1] Forstå forgjengerstruktuen for alle-til-alle-varianten av korteste-vei-problemet (PRINT-ALL-PAIRS-SHORTEST-PATH)
@@ -1425,7 +1425,7 @@ For heltallskapasiteter gir Ford-Fulkerson heltallsflyt
 Dersom kapasitetsfunksjonen c kun tar på seg heltallsverdier, da vil maksimumflyten f produsert av Ford-Fulkerson-metodenha den egenskapen at | f | er en heltall.
 Generelt, vil flyten mellom to noder f(u,v) være et heltall for alle noder u og v.
  
-13 NP-kompletthet
+### 13 NP-kompletthet
 NP er den enorme klassen av ja-nei-problemer der ethvert ja-svar har et bevis som kan sjekkes i polynomisk tid. Alle problemer i NP kan i polynomisk tid reduseres til de såkalt komplette problemene i NP. Dermed kan ikke disse løses i polynomisk tid, med mindre alt i NP kan det. Ingen har klart det så langt…
  
 [M1] Forstå sammenhengen mellom optimerings- og beslutnings-problemer
@@ -1587,7 +1587,8 @@ Hvis kretsen har k inputs, må vi sjekke 2k mulige utfall, og det er ikke bra
 Altså tar checkingen av hver Ω(2k) tid, som er superpolynomisk i størrelsen til kretsen
 Dette er NP-komplett, og har vi sterke beviser på at ingen polynomisk algoritme eksisterer som løser Circuit SAT 
 For å vise at noe er NP-komplett, må vi vise at (1) det er i NP og (2) det er NP-hardt
-14 NP-komplette problemer
+
+### 14 NP-komplette problemer
 Om du står overfor et NP-komplett problem, så er det viktig å kunne bevise det. Vi har sett at alt i NP kan reduseres til CIRCUIT-SAT direkte, men vi kan også vise kompletthet indirekte, ved å redusere videre fra CIRCUIT-SAT.
  
 [N1] Forstå hvordan NP-kompletthet kan bevises ved én reduksjon (!)
@@ -1617,23 +1618,10 @@ Se [J4]
 [N6] Være i stand til å konstruere enkle NP-kompletthetsbevis
 
 
+### Rekker vi må kunne:
 
 
-
-
-Rekker vi må kunne:
-
-
-
-
-
-
-
-
-
-
-
-Oversikt sorteringsalgoritmer:
+### Oversikt sorteringsalgoritmer:
 Sammenligningsbasert
 Sammenligner to elementer for å se hvem som skal stå først i sekvensen. Worst case Ω(n lgn).
 Stabil
@@ -1734,7 +1722,7 @@ x
 O(n)
 Medianer av medianer
 
-Oversikt korteste vei algoritmer:
+### Oversikt korteste vei algoritmer:
 
 Navn
 Kjøretid
